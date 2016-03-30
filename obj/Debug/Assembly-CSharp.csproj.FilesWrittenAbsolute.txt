@@ -11,3 +11,7 @@
 /Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/obj/Debug/Assembly-CSharp.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Assembly-CSharp.dll
