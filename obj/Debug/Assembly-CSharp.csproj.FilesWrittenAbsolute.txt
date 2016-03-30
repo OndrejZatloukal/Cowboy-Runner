@@ -1,0 +1,13 @@
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/UnityEngine.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/UnityEditor.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Mono.Cecil.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Unity.DataContract.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/ondrejzatloukal/Documents/Unity Projects/Cowboy Runner/Temp/bin/Debug/Mono.Cecil.Mdb.dll
