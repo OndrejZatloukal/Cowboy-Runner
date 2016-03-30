@@ -15,8 +15,12 @@ public class PlayerJump : MonoBehaviour {
 
 	private Button jumpBtn;
 
+	private Animator anim;
+
 	void Awake () {
 		myBody = GetComponent<Rigidbody2D> ();
+
+		anim = GetComponent<Animator> ();
 
 		jumpBtn = GameObject.Find ("Jump Button").GetComponent<Button> ();
 
@@ -33,7 +37,8 @@ public class PlayerJump : MonoBehaviour {
 		if (canJump) {
 			canJump = false;
 
-	//		AudioSource.PlayClipAtPoint(jumpClip, transform.position);
+			AudioSource.PlayClipAtPoint(jumpClip, transform.position);
+			anim.Play ("Jump");
 
 			if(transform.position.x < 0) {
 				forwardForce = 1f;
