@@ -18,6 +18,7 @@ public class GameplayController : MonoBehaviour {
 
 
 
+
 	void Start () {
 		scoreText.text = "" + score + "M";
 		StartCoroutine (CountScore ());
@@ -51,12 +52,12 @@ public class GameplayController : MonoBehaviour {
 			}
 		}
 			
-
-		pauseText.text = "Game Over";
+		StartCoroutine(Bob());
+	/*	pauseText.text = "Game Over";
 		pausePanel.SetActive (true);
 		restartGameButton.onClick.RemoveAllListeners ();
 		restartGameButton.onClick.AddListener (() => RestartGame ());
-		Time.timeScale = 0f;
+		Time.timeScale = 0f; */
 	}
 
 	public void PauseButton() {
@@ -79,5 +80,17 @@ public class GameplayController : MonoBehaviour {
 	public void RestartGame() {
 		Time.timeScale = 1f;
 		SceneManager.LoadScene ("GamePlay");
+	}
+
+	IEnumerator Bob()
+	{
+		print(Time.time);
+		yield return new WaitForSeconds(1);
+		print(Time.time);
+		pauseText.text = "Game Over";
+		pausePanel.SetActive (true);
+		restartGameButton.onClick.RemoveAllListeners ();
+		restartGameButton.onClick.AddListener (() => RestartGame ());
+		Time.timeScale = 0f;
 	}
 } //Gameplay Controller
