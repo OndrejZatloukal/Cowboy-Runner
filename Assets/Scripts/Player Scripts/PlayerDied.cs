@@ -25,7 +25,7 @@ public class PlayerDied : MonoBehaviour {
 		if (target.gameObject.tag == "Zombie") {
 			PlayerDiedEndGame ();
 		}
-	}
+	} 
 
 
 } //Playerdied
