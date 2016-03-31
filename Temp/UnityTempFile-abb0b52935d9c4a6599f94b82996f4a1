@@ -83,8 +83,11 @@
 -define:UNITY_EDITOR_OSX
 'Assets/Scripts/Background Scripts/BGLooper.cs'
 'Assets/Scripts/Background Scripts/BGScaler.cs'
+'Assets/Scripts/Obstacle Scripts/ObscatleSpawner.cs'
 'Assets/Scripts/Obstacle Scripts/Obstacle.cs'
+'Assets/Scripts/Obstacle Scripts/ObstacleOffScreen.cs'
 'Assets/Scripts/Player Scripts/PlayerAnimation.cs'
+'Assets/Scripts/Player Scripts/PlayerDied.cs'
 'Assets/Scripts/Player Scripts/PlayerJump.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'

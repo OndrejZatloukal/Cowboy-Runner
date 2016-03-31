@@ -49,7 +49,9 @@
      <Compile Include="Assets\Scripts\Background Scripts\BGScaler.cs" />
      <Compile Include="Assets\Scripts\Obstacle Scripts\ObscatleSpawner.cs" />
      <Compile Include="Assets\Scripts\Obstacle Scripts\Obstacle.cs" />
+     <Compile Include="Assets\Scripts\Obstacle Scripts\ObstacleOffScreen.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerAnimation.cs" />
+     <Compile Include="Assets\Scripts\Player Scripts\PlayerDied.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerJump.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
