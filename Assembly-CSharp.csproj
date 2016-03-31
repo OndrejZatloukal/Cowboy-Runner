@@ -47,6 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Background Scripts\BGLooper.cs" />
      <Compile Include="Assets\Scripts\Background Scripts\BGScaler.cs" />
+     <Compile Include="Assets\Scripts\Game Controllers\GameplayController.cs" />
+     <Compile Include="Assets\Scripts\Game Controllers\MainMenuController.cs" />
      <Compile Include="Assets\Scripts\Obstacle Scripts\ObscatleSpawner.cs" />
      <Compile Include="Assets\Scripts\Obstacle Scripts\Obstacle.cs" />
      <Compile Include="Assets\Scripts\Obstacle Scripts\ObstacleOffScreen.cs" />

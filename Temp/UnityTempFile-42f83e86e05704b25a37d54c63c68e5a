@@ -83,6 +83,7 @@
 -define:UNITY_EDITOR_OSX
 'Assets/Scripts/Background Scripts/BGLooper.cs'
 'Assets/Scripts/Background Scripts/BGScaler.cs'
+'Assets/Scripts/Game Controllers/MainMenuController.cs'
 'Assets/Scripts/Obstacle Scripts/ObscatleSpawner.cs'
 'Assets/Scripts/Obstacle Scripts/Obstacle.cs'
 'Assets/Scripts/Obstacle Scripts/ObstacleOffScreen.cs'
