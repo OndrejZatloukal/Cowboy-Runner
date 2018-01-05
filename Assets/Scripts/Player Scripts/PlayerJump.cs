@@ -2,8 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class PlayerJump : MonoBehaviour {
-
+public class PlayerJump : MonoBehaviour
+{
 	[SerializeField]
 	private AudioClip jumpClip;
 
@@ -17,41 +17,46 @@ public class PlayerJump : MonoBehaviour {
 
 	private Animator anim;
 
-	void Awake () {
-		myBody = GetComponent<Rigidbody2D> ();
+	void Awake()
+    {
+		myBody = GetComponent<Rigidbody2D>();
 
-		anim = GetComponent<Animator> ();
+		anim = GetComponent<Animator>();
 
-		jumpBtn = GameObject.Find ("Jump Button").GetComponent<Button> ();
+		jumpBtn = GameObject.Find("Jump Button").GetComponent<Button> ();
 
 		jumpBtn.onClick.AddListener (() => Jump());
 	}
 
-	void Update () {
-		if(Mathf.Abs(myBody.velocity.y) == 0) {
+	void Update()
+    {
+		if(Mathf.Abs(myBody.velocity.y) == 0)
+        {
 			canJump = true;
 		}
 	}
 
-	public void Jump() {
-		if (canJump) {
+	public void Jump()
+    {
+		if (canJump)
+        {
 			canJump = false;
 
 			AudioSource.PlayClipAtPoint(jumpClip, transform.position);
 			anim.Play ("Jump");
 
-			if(transform.position.x < 0) {
+			if(transform.position.x < 0)
+            {
 				forwardForce = 1f;
-			} else {
+			}
+            else
+            {
 				forwardForce = 0f;
 			}
 
 			myBody.velocity = new Vector2(forwardForce, jumpForce);
-
 		}
 	}
-
-
 } //PlayerJump
 
 

@@ -3,86 +3,103 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class GameplayController : MonoBehaviour {
+public class GameplayController : MonoBehaviour
+{
+	[SerializeField] private GameObject pausePanel;
 
-	[SerializeField]
-	private GameObject pausePanel;
+	[SerializeField] private Button restartGameButton;
 
-	[SerializeField]
-	private Button restartGameButton;
-
-	[SerializeField]
-	private Text scoreText, pauseText;
+	[SerializeField] private Text scoreText, pauseText;
 
 	private int score;
 
+	void Start()
+    {
+        DisplaysScore();
+    }
 
+    private void DisplaysScore()
+    {
+        scoreText.text = "" + score + "M";
+        StartCoroutine(AddScore());
+    }
 
-
-	void Start () {
-		scoreText.text = "" + score + "M";
-		StartCoroutine (CountScore ());
-
-
-	}
-
-	IEnumerator CountScore() {
+    IEnumerator AddScore()
+    {
 		yield return new WaitForSeconds (0.6f);
 		score++;
 		scoreText.text =  score + "M";
-		StartCoroutine (CountScore ());
+		StartCoroutine (AddScore ());
 	}
 
-	void OnEnable() {
+	void OnEnable()
+    {
 		PlayerDied.endGame += PlayerDiedEndTheGame;
 	}
 
-	void OnDisable() {
+	void OnDisable()
+    {
 		PlayerDied.endGame -= PlayerDiedEndTheGame;
 	}
 
-	void PlayerDiedEndTheGame () {
-		if (!PlayerPrefs.HasKey ("Score")) {
+	void PlayerDiedEndTheGame()
+    {
+		if (!PlayerPrefs.HasKey ("Score"))
+        {
 			PlayerPrefs.SetInt ("Score", 0);
-		} else {
-			int highscore = PlayerPrefs.GetInt ("Score");
-
-			if (highscore < score) {
-				PlayerPrefs.SetInt ("Score", score);
-			}
 		}
-			
-		StartCoroutine(Bob());
-	/*	pauseText.text = "Game Over";
+        else
+        {
+            DisplayFinalScore();
+        }
+
+        StartCoroutine(GameOver());
+	/*	
+        pauseText.text = "Game Over";
 		pausePanel.SetActive (true);
 		restartGameButton.onClick.RemoveAllListeners ();
 		restartGameButton.onClick.AddListener (() => RestartGame ());
-		Time.timeScale = 0f; */
+		Time.timeScale = 0f; 
+    */
 	}
 
-	public void PauseButton() {
+    private void DisplayFinalScore()
+    {
+        int highscore = PlayerPrefs.GetInt("Score");
+
+        if (highscore < score)
+        {
+            PlayerPrefs.SetInt("Score", score);
+        }
+    }
+
+    public void PauseButton()
+    {
 		Time.timeScale = 0f;
 		pausePanel.SetActive (true);
 		restartGameButton.onClick.RemoveAllListeners ();
 		restartGameButton.onClick.AddListener (() => ResumeGame ());
 	}
 
-	public void GoToMenu() {
+	public void GoToMenu()
+    {
 		Time.timeScale = 1f;
 		SceneManager.LoadScene ("MainMenu");
 	}
 
-	public void ResumeGame() {
+	public void ResumeGame()
+    {
 		Time.timeScale = 1f;
 		pausePanel.SetActive (false);
 	}
 
-	public void RestartGame() {
+	public void RestartGame()
+    {
 		Time.timeScale = 1f;
 		SceneManager.LoadScene ("GamePlay");
 	}
 
-	IEnumerator Bob()
+	IEnumerator GameOver()
 	{
 		print(Time.time);
 		yield return new WaitForSeconds(1);
@@ -93,4 +110,4 @@ public class GameplayController : MonoBehaviour {
 		restartGameButton.onClick.AddListener (() => RestartGame ());
 		Time.timeScale = 0f;
 	}
-} //Gameplay Controller
+} // GameplayController
