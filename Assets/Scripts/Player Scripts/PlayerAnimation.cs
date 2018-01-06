@@ -21,6 +21,8 @@ public class PlayerAnimation : MonoBehaviour
             case "Zombie":
                 anim.Play("Death");
                 break;
+            default:
+                return;
         }
     }
 

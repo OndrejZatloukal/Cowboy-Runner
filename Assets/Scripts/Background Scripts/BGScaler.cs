@@ -5,8 +5,6 @@ public class BGScaler : MonoBehaviour
 {
 	void Start()
     {
-        // Calculate the size of the Camera and fills the Quad with Background Material
-
         CalculateCameraSize();
     }
 

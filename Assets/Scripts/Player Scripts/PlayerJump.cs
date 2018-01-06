@@ -4,18 +4,17 @@ using System.Collections;
 
 public class PlayerJump : MonoBehaviour
 {
-	[SerializeField]
-	private AudioClip jumpClip;
+	[SerializeField] private AudioClip jumpClip;
 
-	private float jumpForce = 12f, forwardForce = 0f;
+    private Animator anim;
 
-	private Rigidbody2D myBody;
+    private Rigidbody2D myBody;
 
+    private Button jumpBtn;
+
+    private float jumpForce = 12f, forwardForce = 0f;
+    private bool isAlive = true;
 	private bool canJump;
-
-	private Button jumpBtn;
-
-	private Animator anim;
 
 	void Awake()
     {
@@ -25,19 +24,33 @@ public class PlayerJump : MonoBehaviour
 
 		jumpBtn = GameObject.Find("Jump Button").GetComponent<Button> ();
 
-		jumpBtn.onClick.AddListener (() => Jump());
+		jumpBtn.onClick.AddListener (() => RespondToJumpInput());
 	}
 
-	void Update()
+    private void OnCollisionEnter2D(Collision2D enemy)
     {
-		if(Mathf.Abs(myBody.velocity.y) == 0)
+        if (enemy.gameObject.tag == "Zombie")
         {
-			canJump = true;
-		}
-	}
+            isAlive = false;
+        }
+    }
 
-	public void Jump()
+    void Update()
     {
+        CheckIfNotStuckAndAlive();
+    }
+
+    private void CheckIfNotStuckAndAlive()
+    {
+        if (Mathf.Abs(myBody.velocity.y) == 0 && isAlive == true)
+        {
+            canJump = true;
+        }
+    }
+
+    public void RespondToJumpInput()
+    {
+
 		if (canJump)
         {
 			canJump = false;
@@ -56,7 +69,7 @@ public class PlayerJump : MonoBehaviour
 
 			myBody.velocity = new Vector2(forwardForce, jumpForce);
 		}
-	}
+    }
 } //PlayerJump
 
 

@@ -10,15 +10,23 @@ public class PlayerDied : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D target)
     {
-		if (target.tag == "Collector" || target.tag == "Zombie")
+		if (target.tag == "Collector")
         {
-			AudioSource.PlayClipAtPoint(deathClip, transform.position);
-			PlayerDiedEndGame();
-		}
+            StartCoroutine(PlayerDiedEndGame());
+        }
 	}
 
-     IEnumerator PlayerDiedEndGame()
+    private void OnCollisionEnter2D(Collision2D enemy)
     {
+        if (enemy.gameObject.tag == "Zombie")
+        {
+            StartCoroutine(PlayerDiedEndGame());
+        }
+    }
+
+    IEnumerator PlayerDiedEndGame()
+    {
+        AudioSource.PlayClipAtPoint(deathClip, transform.position);
         if (endGame != null)
             endGame();
         yield return new WaitForSeconds(1);
